@@ -1,6 +1,7 @@
 ﻿using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Routing;
+using WebApplication.Handlers;
 
 namespace WebApplication
 {
@@ -26,6 +27,30 @@ namespace WebApplication
                 "validate a user",
                 "filter/before/secret",
                 new {controller = "Filter", action = "GetSecret"},
+                new {httpMethod = new HttpMethodConstraint(HttpMethod.Get)});
+
+            config.Routes.MapHttpRoute(
+                "log in",
+                "api/session",
+                new {controller = "User", action = "LogIn"},
+                new {httpMethod = new HttpMethodConstraint(HttpMethod.Post)});
+
+            config.Routes.MapHttpRoute(
+                "cancel",
+                "api/session",
+                new {controller = "User", action = "Cancel"},
+                new {httpMethod = new HttpMethodConstraint(HttpMethod.Delete)});
+
+            config.Routes.MapHttpRoute(
+                "create user",
+                "api/user",
+                new {controller = "User", action = "Create"},
+                new {httpMethod = new HttpMethodConstraint(HttpMethod.Post)});
+
+            config.Routes.MapHttpRoute(
+                "get user",
+                "api/user/{id}",
+                new {controller = "User", action = "GetUser"},
                 new {httpMethod = new HttpMethodConstraint(HttpMethod.Get)});
         }
     }

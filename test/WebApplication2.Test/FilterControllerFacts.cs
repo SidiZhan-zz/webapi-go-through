@@ -30,7 +30,7 @@ namespace WebApplication2.Test
         [Fact]
         public async Task should_not_get_access_to_the_path_starts_with_api()
         {
-            var response = await httpClient.GetAsync("http://whatever.com/api/not/important");
+            var response = await httpClient.GetAsync("http://whatever.com/api/secret/that/you/cannot/see");
             Assert.Equal(HttpStatusCode.Forbidden, response.StatusCode);
         }
     }
