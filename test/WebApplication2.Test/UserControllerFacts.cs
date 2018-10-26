@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -9,10 +8,15 @@ using Newtonsoft.Json;
 using WebApplication.Controllers;
 using Xunit;
 
-namespace WebApplication2.Test
+namespace WebApplication.Test
 {
     public class UserControllerFacts : ControllerFactsBase
     {
+        public UserControllerFacts() : base(CustomizeContainerBuilder)
+        {
+            
+        }
+
         [Fact]
         public async Task should_log_in_successfully_AC1()
         {

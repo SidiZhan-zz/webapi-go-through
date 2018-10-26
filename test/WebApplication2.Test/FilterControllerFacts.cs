@@ -1,13 +1,20 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Autofac;
 using Xunit;
 
-namespace WebApplication2.Test
+namespace WebApplication.Test
 {
     public class FilterControllerFacts : ControllerFactsBase
     {
+        public FilterControllerFacts() : base(CustomizeContainerBuilder)
+        {
+            
+        }
+
         [Fact]
         public async Task should_add_header_to_response()
         {

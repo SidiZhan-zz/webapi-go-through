@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Autofac;
 using Xunit;
-using Xunit.Abstractions;
 
-namespace WebApplication2.Test
+namespace WebApplication.Test
 {
     public class IoCFacts
     {

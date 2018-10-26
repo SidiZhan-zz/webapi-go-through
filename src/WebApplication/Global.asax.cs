@@ -9,7 +9,8 @@ namespace WebApplication
         protected void Application_Start(object sender, EventArgs e)
         {
             var config = GlobalConfiguration.Configuration;
-            Bootstrapper.Initialize(config);
+            var bootStrapper = new Bootstrapper();
+            bootStrapper.Initialize(config);
         }
     }
 }
